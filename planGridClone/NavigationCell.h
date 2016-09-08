@@ -16,5 +16,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *moreDetails;
 @property (weak, nonatomic) IBOutlet UILabel *who;
 
+- (IBAction)centreButtonClicked:(id)sender;
+- (IBAction)topButtonClicked:(id)sender;
+- (IBAction)bottomButtonClicked:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIButton *topButton;
+@property (weak, nonatomic) IBOutlet UIButton *centreButton;
+@property (weak, nonatomic) IBOutlet UIButton *bottomButton;
+
+
 
 @end

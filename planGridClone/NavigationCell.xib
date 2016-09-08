@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I1K-m1-9FW">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I1K-m1-9FW" userLabel="Center View">
                         <rect key="frame" x="60" y="0.0" width="200" height="100"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ABC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HaN-Zm-e5S">
@@ -53,26 +53,74 @@
                         <rect key="frame" x="8" y="8" width="50" height="40"/>
                         <animations/>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pj-M7-AeU">
+                        <rect key="frame" x="284" y="36" width="28" height="28"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="oyF-55-SOO"/>
+                            <constraint firstAttribute="width" constant="28" id="xri-ZD-Itl"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="visible.png"/>
+                        <connections>
+                            <action selector="centreButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="JOA-35-SQZ"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufz-fx-rQP">
+                        <rect key="frame" x="284" y="8" width="28" height="28"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="28" id="Z6Z-Zh-Xg6"/>
+                            <constraint firstAttribute="height" constant="28" id="tzl-t9-vlq"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="correct.png"/>
+                        <connections>
+                            <action selector="topButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ABy-vu-DBD"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5R3-GA-4ax">
+                        <rect key="frame" x="286" y="66" width="26" height="26"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="26" id="8sO-pm-o8F"/>
+                            <constraint firstAttribute="width" constant="26" id="zpe-Mk-Oe8"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="wrong.png"/>
+                        <connections>
+                            <action selector="bottomButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="BBq-BQ-cKX"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <animations/>
                 <constraints>
+                    <constraint firstItem="ufz-fx-rQP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="59F-Ti-DkE"/>
+                    <constraint firstItem="4pj-M7-AeU" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="GCW-ym-fUl"/>
                     <constraint firstAttribute="trailing" secondItem="I1K-m1-9FW" secondAttribute="trailing" constant="60" id="IC2-TM-Ssr"/>
                     <constraint firstItem="I1K-m1-9FW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="60" id="JZz-Zy-gcV"/>
+                    <constraint firstAttribute="trailing" secondItem="ufz-fx-rQP" secondAttribute="trailing" constant="8" id="dDf-nk-d9T"/>
+                    <constraint firstAttribute="bottom" secondItem="5R3-GA-4ax" secondAttribute="bottom" constant="8" id="eiC-H2-O2S"/>
+                    <constraint firstAttribute="trailing" secondItem="5R3-GA-4ax" secondAttribute="trailing" constant="8" id="giB-AN-jcu"/>
                     <constraint firstItem="I1K-m1-9FW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="mAT-3w-G8O"/>
                     <constraint firstAttribute="bottom" secondItem="I1K-m1-9FW" secondAttribute="bottom" id="p0l-ll-6aa"/>
+                    <constraint firstAttribute="trailing" secondItem="4pj-M7-AeU" secondAttribute="trailing" constant="8" id="u7X-km-XAz"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>
             <connections>
+                <outlet property="bottomButton" destination="5R3-GA-4ax" id="wj9-zC-8x6"/>
+                <outlet property="centreButton" destination="4pj-M7-AeU" id="KG5-lU-wha"/>
                 <outlet property="lastUpdated" destination="exk-SC-QHl" id="APB-Yr-LKk"/>
                 <outlet property="moreDetails" destination="eBf-kO-A17" id="vwF-V2-63X"/>
                 <outlet property="smallImage" destination="Ily-fK-nmU" id="33C-6I-oxn"/>
                 <outlet property="title" destination="HaN-Zm-e5S" id="Xen-7u-ssY"/>
+                <outlet property="topButton" destination="ufz-fx-rQP" id="9RI-Oq-AMD"/>
                 <outlet property="who" destination="dhY-PD-12Z" id="Rqi-dr-6Nv"/>
             </connections>
         </tableViewCell>
     </objects>
     <resources>
         <image name="blueprint.png" width="64" height="64"/>
+        <image name="correct.png" width="64" height="64"/>
+        <image name="visible.png" width="64" height="64"/>
+        <image name="wrong.png" width="64" height="64"/>
     </resources>
 </document>

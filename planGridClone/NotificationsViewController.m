@@ -57,7 +57,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 8;
+    return 9;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -68,48 +68,74 @@
         cell.title.text = @"Architect Blueprints";
         cell.moreDetails.text = @"For first floor";
         cell.smallImage.image = [UIImage imageNamed:@"blueprint"];
+        cell.centreButton.hidden = NO;
+        cell.topButton.hidden = YES;
+        cell.bottomButton.hidden = YES;
     }
     else if(indexPath.row == 1){
         cell.title.text = @"Paint Job [Exterior]";
         cell.moreDetails.text = @"Weather proof job done";
         cell.smallImage.image = [UIImage imageNamed:@"roller"];
-
+        cell.centreButton.hidden = YES;
+        cell.topButton.hidden = NO;
+        cell.bottomButton.hidden = NO;
     }
     else if(indexPath.row == 2){
-        cell.title.text = @"Garden Wall";
-        cell.moreDetails.text = @"Wall ready";
+        cell.title.text = @"Garden Wall Delayed";
+        cell.moreDetails.text = @"Wall delayed";
         cell.smallImage.image = [UIImage imageNamed:@"wall"];
-
+        cell.centreButton.hidden = NO;
+        cell.topButton.hidden = YES;
+        cell.bottomButton.hidden = YES;
+        [cell.centreButton setBackgroundImage:[UIImage imageNamed:@"warning.png"] forState:UIControlStateNormal];
     }
     else if(indexPath.row == 3){
         cell.title.text = @"Room Plan";
         cell.moreDetails.text = @"Room plan done";
         cell.smallImage.image = [UIImage imageNamed:@"rooms"];
-
+        cell.centreButton.hidden = NO;
+        cell.topButton.hidden = YES;
+        cell.bottomButton.hidden = YES;
     }
     else if(indexPath.row == 4){
-        cell.title.text = @"Civil Engineer Visiting";
-        cell.moreDetails.text = @"Today 12:00 pm";
+        cell.title.text = @"Civil Engineer Visit";
+        cell.moreDetails.text = @"Scheduled today 12:00 pm";
         cell.smallImage.image = [UIImage imageNamed:@"helmet"];
-
+        cell.centreButton.hidden = YES;
+        cell.topButton.hidden = NO;
+        cell.bottomButton.hidden = NO;
     }
     else if(indexPath.row == 5){
         cell.title.text = @"Garden Landscaping";
-        cell.moreDetails.text = @"Today 1:00 pm";
+        cell.moreDetails.text = @"Landscaping done";
         cell.smallImage.image = [UIImage imageNamed:@"trees"];
-        
+        cell.centreButton.hidden = YES;
+        cell.topButton.hidden = NO;
+        cell.bottomButton.hidden = NO;
     }
     else if(indexPath.row == 6){
         cell.title.text = @"Fence Around Garden";
         cell.moreDetails.text = @"Today 1:00 pm";
         cell.smallImage.image = [UIImage imageNamed:@"fence"];
-        
+        cell.centreButton.hidden = YES;
+        cell.topButton.hidden = NO;
+        cell.bottomButton.hidden = NO;
     }
     else if(indexPath.row == 7){
         cell.title.text = @"Fountain";
         cell.moreDetails.text = @"Today 1:00 pm";
         cell.smallImage.image = [UIImage imageNamed:@"fountain"];
-        
+        cell.centreButton.hidden = YES;
+        cell.topButton.hidden = NO;
+        cell.bottomButton.hidden = NO;
+    }
+    else if(indexPath.row == 8){
+        cell.title.text = @"RFI";
+        cell.moreDetails.text = @"Flooring information requested";
+        cell.smallImage.image = [UIImage imageNamed:@"newsletter"];
+        cell.centreButton.hidden = NO;
+        cell.topButton.hidden = YES;
+        cell.bottomButton.hidden = YES;
     }
     
     return cell;
