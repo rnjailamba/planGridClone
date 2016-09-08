@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpNavBar];
-    [self performSelector:@selector(changeNotifImage) withObject:nil afterDelay:2.0];
+    [self performSelector:@selector(changeNotifImage) withObject:nil afterDelay:1.0];
 
 }
 

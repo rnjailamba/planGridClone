@@ -57,7 +57,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 9;
+    return 11;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -71,6 +71,8 @@
         cell.centreButton.hidden = NO;
         cell.topButton.hidden = YES;
         cell.bottomButton.hidden = YES;
+        [cell.centreButton setBackgroundImage:[UIImage imageNamed:@"visible"] forState:UIControlStateNormal];
+
     }
     else if(indexPath.row == 1){
         cell.title.text = @"Paint Job [Exterior]";
@@ -89,15 +91,17 @@
         cell.bottomButton.hidden = YES;
         [cell.centreButton setBackgroundImage:[UIImage imageNamed:@"warning.png"] forState:UIControlStateNormal];
     }
-    else if(indexPath.row == 3){
+    else if(indexPath.row == 5){
         cell.title.text = @"Room Plan";
         cell.moreDetails.text = @"Room plan done";
         cell.smallImage.image = [UIImage imageNamed:@"rooms"];
         cell.centreButton.hidden = NO;
         cell.topButton.hidden = YES;
         cell.bottomButton.hidden = YES;
+        [cell.centreButton setBackgroundImage:[UIImage imageNamed:@"visible"] forState:UIControlStateNormal];
+
     }
-    else if(indexPath.row == 4){
+    else if(indexPath.row == 10){
         cell.title.text = @"Civil Engineer Visit";
         cell.moreDetails.text = @"Scheduled today 12:00 pm";
         cell.smallImage.image = [UIImage imageNamed:@"helmet"];
@@ -107,7 +111,7 @@
         [cell.centreButton setBackgroundImage:[UIImage imageNamed:@"correct"] forState:UIControlStateNormal];
 
     }
-    else if(indexPath.row == 5){
+    else if(indexPath.row == 3){
         cell.title.text = @"Architect Visit";
         cell.moreDetails.text = @"Please give feedback";
         cell.smallImage.image = [UIImage imageNamed:@"architect"];
@@ -139,6 +143,8 @@
         cell.centreButton.hidden = NO;
         cell.topButton.hidden = YES;
         cell.bottomButton.hidden = YES;
+        [cell.centreButton setBackgroundImage:[UIImage imageNamed:@"visible"] forState:UIControlStateNormal];
+
     }
     else if(indexPath.row == 9){
         cell.title.text = @"Garden Landscaping";
@@ -147,6 +153,15 @@
         cell.centreButton.hidden = YES;
         cell.topButton.hidden = NO;
         cell.bottomButton.hidden = NO;
+    }
+    else if(indexPath.row == 4){
+        cell.title.text = @"Payment Due";
+        cell.moreDetails.text = @"Phase 3 completed]";
+        cell.smallImage.image = [UIImage imageNamed:@"money"];
+        cell.centreButton.hidden = NO;
+        cell.topButton.hidden = YES;
+        cell.bottomButton.hidden = YES;
+        [cell.centreButton setBackgroundImage:[UIImage imageNamed:@"card"] forState:UIControlStateNormal];
     }
     
     return cell;
