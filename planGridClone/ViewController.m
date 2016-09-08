@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController () <UIActionSheetDelegate>
+@interface ViewController ()
 
 @end
 
@@ -33,7 +33,7 @@
 
     UIButton *buttonView1 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
     [buttonView1 addTarget:self action:@selector(leftButtonClicked) forControlEvents:UIControlEventTouchUpInside];
-    [buttonView1 setBackgroundImage:[UIImage imageNamed:@"news.png"] forState:UIControlStateNormal];
+    [buttonView1 setBackgroundImage:[UIImage imageNamed:@"plus.png"] forState:UIControlStateNormal];
     UIBarButtonItem *barButton1 = [[UIBarButtonItem alloc] initWithCustomView:buttonView1];
     [self.navigationItem setLeftBarButtonItem:barButton1];
 }
@@ -47,16 +47,17 @@
         // Cancel button tappped.
         [self dismissViewControllerAnimated:YES completion:^{
         }];
+
     }]];
     
-    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Delete" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Account" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
         // Distructive button tapped.
         [self dismissViewControllerAnimated:YES completion:^{
         }];
     }]];
     
-    [actionSheet addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Log Out" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
         
         // OK button tapped.
         
@@ -70,6 +71,7 @@
 }
 
 -(void)leftButtonClicked{
+    
     
 }
 
