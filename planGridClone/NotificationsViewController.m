@@ -101,17 +101,20 @@
         cell.title.text = @"Civil Engineer Visit";
         cell.moreDetails.text = @"Scheduled today 12:00 pm";
         cell.smallImage.image = [UIImage imageNamed:@"helmet"];
-        cell.centreButton.hidden = YES;
-        cell.topButton.hidden = NO;
-        cell.bottomButton.hidden = NO;
+        cell.centreButton.hidden = NO;
+        cell.topButton.hidden = YES;
+        cell.bottomButton.hidden = YES;
+        [cell.centreButton setBackgroundImage:[UIImage imageNamed:@"correct"] forState:UIControlStateNormal];
+
     }
     else if(indexPath.row == 5){
-        cell.title.text = @"Garden Landscaping";
-        cell.moreDetails.text = @"Landscaping done";
-        cell.smallImage.image = [UIImage imageNamed:@"trees"];
-        cell.centreButton.hidden = YES;
-        cell.topButton.hidden = NO;
-        cell.bottomButton.hidden = NO;
+        cell.title.text = @"Architect Visit";
+        cell.moreDetails.text = @"Please give feedback";
+        cell.smallImage.image = [UIImage imageNamed:@"architect"];
+        cell.centreButton.hidden = NO;
+        cell.topButton.hidden = YES;
+        cell.bottomButton.hidden = YES;
+        [cell.centreButton setBackgroundImage:[UIImage imageNamed:@"chat"] forState:UIControlStateNormal];
     }
     else if(indexPath.row == 6){
         cell.title.text = @"Fence Around Garden";
@@ -136,6 +139,14 @@
         cell.centreButton.hidden = NO;
         cell.topButton.hidden = YES;
         cell.bottomButton.hidden = YES;
+    }
+    else if(indexPath.row == 9){
+        cell.title.text = @"Garden Landscaping";
+        cell.moreDetails.text = @"Landscaping done";
+        cell.smallImage.image = [UIImage imageNamed:@"trees"];
+        cell.centreButton.hidden = YES;
+        cell.topButton.hidden = NO;
+        cell.bottomButton.hidden = NO;
     }
     
     return cell;
