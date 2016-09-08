@@ -21,6 +21,8 @@
 		63FBA4C91D8116F100646E4D /* user1.png in Resources */ = {isa = PBXBuildFile; fileRef = 63FBA4C81D8116F100646E4D /* user1.png */; };
 		63FBA4CD1D81177100646E4D /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FBA4CB1D81177100646E4D /* NotificationViewController.m */; };
 		63FBA4CE1D81177100646E4D /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63FBA4CC1D81177100646E4D /* NotificationViewController.xib */; };
+		63FBA4D21D8121BA00646E4D /* NotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FBA4D01D8121BA00646E4D /* NotificationsViewController.m */; };
+		63FBA4D31D8121BA00646E4D /* NotificationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63FBA4D11D8121BA00646E4D /* NotificationsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,9 @@
 		63FBA4CA1D81177100646E4D /* NotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
 		63FBA4CB1D81177100646E4D /* NotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
 		63FBA4CC1D81177100646E4D /* NotificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationViewController.xib; sourceTree = "<group>"; };
+		63FBA4CF1D8121BA00646E4D /* NotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsViewController.h; sourceTree = "<group>"; };
+		63FBA4D01D8121BA00646E4D /* NotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationsViewController.m; sourceTree = "<group>"; };
+		63FBA4D11D8121BA00646E4D /* NotificationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +90,9 @@
 				63FBA4A21D806D6800646E4D /* ViewController.h */,
 				63FBA4A31D806D6800646E4D /* ViewController.m */,
 				63FBA4B31D806DF700646E4D /* ViewController.xib */,
+				63FBA4CF1D8121BA00646E4D /* NotificationsViewController.h */,
+				63FBA4D01D8121BA00646E4D /* NotificationsViewController.m */,
+				63FBA4D11D8121BA00646E4D /* NotificationsViewController.xib */,
 				63FBA4CA1D81177100646E4D /* NotificationViewController.h */,
 				63FBA4CB1D81177100646E4D /* NotificationViewController.m */,
 				63FBA4CC1D81177100646E4D /* NotificationViewController.xib */,
@@ -177,6 +185,7 @@
 				63FBA4C71D8116B200646E4D /* notiff.png in Resources */,
 				63FBA4CE1D81177100646E4D /* NotificationViewController.xib in Resources */,
 				63FBA4A91D806D6800646E4D /* Assets.xcassets in Resources */,
+				63FBA4D31D8121BA00646E4D /* NotificationsViewController.xib in Resources */,
 				63FBA4B91D80740100646E4D /* user.png in Resources */,
 				63FBA4B61D806FCB00646E4D /* Default-568h@2x.png in Resources */,
 				63FBA4BF1D80FA9C00646E4D /* plus.png in Resources */,
@@ -190,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63FBA4D21D8121BA00646E4D /* NotificationsViewController.m in Sources */,
 				63FBA4A41D806D6800646E4D /* ViewController.m in Sources */,
 				63FBA4CD1D81177100646E4D /* NotificationViewController.m in Sources */,
 				63FBA4A11D806D6800646E4D /* AppDelegate.m in Sources */,

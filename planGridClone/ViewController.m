@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "NotificationViewController.h"
+#import "NotificationsViewController.h"
 
 
 @interface ViewController ()
@@ -78,8 +78,8 @@
 }
 
 -(void)rightNotifButtonClicked{
-    NotificationViewController *notifVC = [[NotificationViewController alloc]initWithNibName:@"NotificationViewController" bundle:nil];
-    [self presentViewController:notifVC animated:YES completion:nil];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[[NotificationsViewController alloc]initWithNibName:@"NotificationsViewController" bundle:nil]];
+    [self.navigationController presentViewController:navigationController animated:YES completion:nil];
 }
 
 -(void)leftButtonClicked{
