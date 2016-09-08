@@ -19,6 +19,8 @@
 		63FBA4C11D81156E00646E4D /* notif.png in Resources */ = {isa = PBXBuildFile; fileRef = 63FBA4C01D81156E00646E4D /* notif.png */; };
 		63FBA4C71D8116B200646E4D /* notiff.png in Resources */ = {isa = PBXBuildFile; fileRef = 63FBA4C61D8116B200646E4D /* notiff.png */; };
 		63FBA4C91D8116F100646E4D /* user1.png in Resources */ = {isa = PBXBuildFile; fileRef = 63FBA4C81D8116F100646E4D /* user1.png */; };
+		63FBA4CD1D81177100646E4D /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FBA4CB1D81177100646E4D /* NotificationViewController.m */; };
+		63FBA4CE1D81177100646E4D /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63FBA4CC1D81177100646E4D /* NotificationViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,9 @@
 		63FBA4C01D81156E00646E4D /* notif.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notif.png; sourceTree = "<group>"; };
 		63FBA4C61D8116B200646E4D /* notiff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notiff.png; sourceTree = "<group>"; };
 		63FBA4C81D8116F100646E4D /* user1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user1.png; sourceTree = "<group>"; };
+		63FBA4CA1D81177100646E4D /* NotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
+		63FBA4CB1D81177100646E4D /* NotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
+		63FBA4CC1D81177100646E4D /* NotificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,14 +77,17 @@
 			isa = PBXGroup;
 			children = (
 				63FBA4B71D8073E200646E4D /* Graphics */,
+				63FBA49C1D806D6800646E4D /* Supporting Files */,
 				63FBA4A81D806D6800646E4D /* Assets.xcassets */,
 				63FBA4AD1D806D6800646E4D /* Info.plist */,
-				63FBA49C1D806D6800646E4D /* Supporting Files */,
 				63FBA49F1D806D6800646E4D /* AppDelegate.h */,
 				63FBA4A01D806D6800646E4D /* AppDelegate.m */,
 				63FBA4A21D806D6800646E4D /* ViewController.h */,
 				63FBA4A31D806D6800646E4D /* ViewController.m */,
 				63FBA4B31D806DF700646E4D /* ViewController.xib */,
+				63FBA4CA1D81177100646E4D /* NotificationViewController.h */,
+				63FBA4CB1D81177100646E4D /* NotificationViewController.m */,
+				63FBA4CC1D81177100646E4D /* NotificationViewController.xib */,
 			);
 			path = planGridClone;
 			sourceTree = "<group>";
@@ -167,6 +175,7 @@
 				63FBA4C91D8116F100646E4D /* user1.png in Resources */,
 				63FBA4B41D806DF700646E4D /* ViewController.xib in Resources */,
 				63FBA4C71D8116B200646E4D /* notiff.png in Resources */,
+				63FBA4CE1D81177100646E4D /* NotificationViewController.xib in Resources */,
 				63FBA4A91D806D6800646E4D /* Assets.xcassets in Resources */,
 				63FBA4B91D80740100646E4D /* user.png in Resources */,
 				63FBA4B61D806FCB00646E4D /* Default-568h@2x.png in Resources */,
@@ -182,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63FBA4A41D806D6800646E4D /* ViewController.m in Sources */,
+				63FBA4CD1D81177100646E4D /* NotificationViewController.m in Sources */,
 				63FBA4A11D806D6800646E4D /* AppDelegate.m in Sources */,
 				63FBA49E1D806D6800646E4D /* main.m in Sources */,
 			);
