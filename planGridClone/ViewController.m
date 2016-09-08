@@ -19,8 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpNavBar];
+    [self performSelector:@selector(changeNotifImage) withObject:nil afterDelay:2.0];
 
-   
 }
 
 -(void)setUpNavBar{
@@ -43,6 +43,21 @@
     [buttonView1 setBackgroundImage:[UIImage imageNamed:@"plus.png"] forState:UIControlStateNormal];
     UIBarButtonItem *barButton1 = [[UIBarButtonItem alloc] initWithCustomView:buttonView1];
     [self.navigationItem setLeftBarButtonItem:barButton1];
+}
+
+-(void)changeNotifImage{
+    
+    UIButton *buttonView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [buttonView addTarget:self action:@selector(rightProfileButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    [buttonView setBackgroundImage:[UIImage imageNamed:@"user1.png"] forState:UIControlStateNormal];
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:buttonView];
+    
+    UIButton *buttonView2 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [buttonView2 addTarget:self action:@selector(rightNotifButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    [buttonView2 setBackgroundImage:[UIImage imageNamed:@"notiff.png"] forState:UIControlStateNormal];
+    UIBarButtonItem *barButton2 = [[UIBarButtonItem alloc] initWithCustomView:buttonView2];
+    
+    [self.navigationItem setRightBarButtonItems:@[barButton2,barButton]];
 }
 
 -(void)rightProfileButtonClicked{

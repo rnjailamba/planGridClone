@@ -11,6 +11,7 @@
 
 @interface NotificationsViewController ()
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -18,14 +19,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setUpNavBar];
+}
+
+-(void)setUpNavBar{
     self.navigationItem.title = @"Notifications";
-    
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneClicked)];
     [self.navigationItem setRightBarButtonItem:barButton];
-    
-
-
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,18 +35,7 @@
 
 - (void)doneClicked {
     [self dismissViewControllerAnimated:YES completion:nil];
-   
-
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
