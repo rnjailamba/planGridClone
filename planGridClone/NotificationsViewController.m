@@ -8,8 +8,9 @@
 
 #import "NotificationsViewController.h"
 #import "NotificationViewController.h"
+#import "NavigationCell.h"
 
-@interface NotificationsViewController ()
+@interface NotificationsViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -20,6 +21,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpNavBar];
+    [self setUpTableView];
+    [self registerNib];
+}
+
+-(void)setUpTableView{
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+}
+
+-(void)registerNib{
+    [self.tableView registerNib:[UINib nibWithNibName:@"NavigationCell" bundle:nil] forCellReuseIdentifier:@"cell"];
 }
 
 -(void)setUpNavBar{
@@ -35,6 +47,32 @@
 
 - (void)doneClicked {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;    //count of section
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 5;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *MyIdentifier = @"cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 100.5f;
 }
 
 

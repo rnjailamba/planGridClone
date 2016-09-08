@@ -23,6 +23,15 @@
 		63FBA4CE1D81177100646E4D /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63FBA4CC1D81177100646E4D /* NotificationViewController.xib */; };
 		63FBA4D21D8121BA00646E4D /* NotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FBA4D01D8121BA00646E4D /* NotificationsViewController.m */; };
 		63FBA4D31D8121BA00646E4D /* NotificationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63FBA4D11D8121BA00646E4D /* NotificationsViewController.xib */; };
+		63FBA4D71D81AD1B00646E4D /* NavigationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FBA4D51D81AD1B00646E4D /* NavigationCell.m */; };
+		63FBA4D81D81AD1B00646E4D /* NavigationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63FBA4D61D81AD1B00646E4D /* NavigationCell.xib */; };
+		63FBA4E01D81AFED00646E4D /* architect.png in Resources */ = {isa = PBXBuildFile; fileRef = 63FBA4D91D81AFED00646E4D /* architect.png */; };
+		63FBA4E11D81AFED00646E4D /* blueprint.png in Resources */ = {isa = PBXBuildFile; fileRef = 63FBA4DA1D81AFED00646E4D /* blueprint.png */; };
+		63FBA4E21D81AFED00646E4D /* blueprint1.png in Resources */ = {isa = PBXBuildFile; fileRef = 63FBA4DB1D81AFED00646E4D /* blueprint1.png */; };
+		63FBA4E31D81AFED00646E4D /* helmet.png in Resources */ = {isa = PBXBuildFile; fileRef = 63FBA4DC1D81AFED00646E4D /* helmet.png */; };
+		63FBA4E41D81AFED00646E4D /* roller.png in Resources */ = {isa = PBXBuildFile; fileRef = 63FBA4DD1D81AFED00646E4D /* roller.png */; };
+		63FBA4E51D81AFED00646E4D /* rooms.png in Resources */ = {isa = PBXBuildFile; fileRef = 63FBA4DE1D81AFED00646E4D /* rooms.png */; };
+		63FBA4E61D81AFED00646E4D /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 63FBA4DF1D81AFED00646E4D /* wall.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +57,16 @@
 		63FBA4CF1D8121BA00646E4D /* NotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsViewController.h; sourceTree = "<group>"; };
 		63FBA4D01D8121BA00646E4D /* NotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationsViewController.m; sourceTree = "<group>"; };
 		63FBA4D11D8121BA00646E4D /* NotificationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationsViewController.xib; sourceTree = "<group>"; };
+		63FBA4D41D81AD1B00646E4D /* NavigationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationCell.h; sourceTree = "<group>"; };
+		63FBA4D51D81AD1B00646E4D /* NavigationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationCell.m; sourceTree = "<group>"; };
+		63FBA4D61D81AD1B00646E4D /* NavigationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationCell.xib; sourceTree = "<group>"; };
+		63FBA4D91D81AFED00646E4D /* architect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = architect.png; sourceTree = "<group>"; };
+		63FBA4DA1D81AFED00646E4D /* blueprint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueprint.png; sourceTree = "<group>"; };
+		63FBA4DB1D81AFED00646E4D /* blueprint1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueprint1.png; sourceTree = "<group>"; };
+		63FBA4DC1D81AFED00646E4D /* helmet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = helmet.png; sourceTree = "<group>"; };
+		63FBA4DD1D81AFED00646E4D /* roller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roller.png; sourceTree = "<group>"; };
+		63FBA4DE1D81AFED00646E4D /* rooms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rooms.png; sourceTree = "<group>"; };
+		63FBA4DF1D81AFED00646E4D /* wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +112,9 @@
 				63FBA4CF1D8121BA00646E4D /* NotificationsViewController.h */,
 				63FBA4D01D8121BA00646E4D /* NotificationsViewController.m */,
 				63FBA4D11D8121BA00646E4D /* NotificationsViewController.xib */,
+				63FBA4D41D81AD1B00646E4D /* NavigationCell.h */,
+				63FBA4D51D81AD1B00646E4D /* NavigationCell.m */,
+				63FBA4D61D81AD1B00646E4D /* NavigationCell.xib */,
 				63FBA4CA1D81177100646E4D /* NotificationViewController.h */,
 				63FBA4CB1D81177100646E4D /* NotificationViewController.m */,
 				63FBA4CC1D81177100646E4D /* NotificationViewController.xib */,
@@ -111,6 +133,13 @@
 		63FBA4B71D8073E200646E4D /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				63FBA4D91D81AFED00646E4D /* architect.png */,
+				63FBA4DA1D81AFED00646E4D /* blueprint.png */,
+				63FBA4DB1D81AFED00646E4D /* blueprint1.png */,
+				63FBA4DC1D81AFED00646E4D /* helmet.png */,
+				63FBA4DD1D81AFED00646E4D /* roller.png */,
+				63FBA4DE1D81AFED00646E4D /* rooms.png */,
+				63FBA4DF1D81AFED00646E4D /* wall.png */,
 				63FBA4BE1D80FA9C00646E4D /* plus.png */,
 				63FBA4C61D8116B200646E4D /* notiff.png */,
 				63FBA4C01D81156E00646E4D /* notif.png */,
@@ -183,12 +212,20 @@
 				63FBA4C91D8116F100646E4D /* user1.png in Resources */,
 				63FBA4B41D806DF700646E4D /* ViewController.xib in Resources */,
 				63FBA4C71D8116B200646E4D /* notiff.png in Resources */,
+				63FBA4E21D81AFED00646E4D /* blueprint1.png in Resources */,
 				63FBA4CE1D81177100646E4D /* NotificationViewController.xib in Resources */,
+				63FBA4E01D81AFED00646E4D /* architect.png in Resources */,
 				63FBA4A91D806D6800646E4D /* Assets.xcassets in Resources */,
 				63FBA4D31D8121BA00646E4D /* NotificationsViewController.xib in Resources */,
+				63FBA4E11D81AFED00646E4D /* blueprint.png in Resources */,
 				63FBA4B91D80740100646E4D /* user.png in Resources */,
+				63FBA4E61D81AFED00646E4D /* wall.png in Resources */,
+				63FBA4E51D81AFED00646E4D /* rooms.png in Resources */,
+				63FBA4E31D81AFED00646E4D /* helmet.png in Resources */,
 				63FBA4B61D806FCB00646E4D /* Default-568h@2x.png in Resources */,
+				63FBA4E41D81AFED00646E4D /* roller.png in Resources */,
 				63FBA4BF1D80FA9C00646E4D /* plus.png in Resources */,
+				63FBA4D81D81AD1B00646E4D /* NavigationCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +239,7 @@
 				63FBA4D21D8121BA00646E4D /* NotificationsViewController.m in Sources */,
 				63FBA4A41D806D6800646E4D /* ViewController.m in Sources */,
 				63FBA4CD1D81177100646E4D /* NotificationViewController.m in Sources */,
+				63FBA4D71D81AD1B00646E4D /* NavigationCell.m in Sources */,
 				63FBA4A11D806D6800646E4D /* AppDelegate.m in Sources */,
 				63FBA49E1D806D6800646E4D /* main.m in Sources */,
 			);

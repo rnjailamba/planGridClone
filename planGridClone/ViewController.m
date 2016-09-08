@@ -26,19 +26,19 @@
 -(void)setUpNavBar{
     self.navigationItem.title = @"Projects";
     
-    UIButton *buttonView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    UIButton *buttonView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
     [buttonView addTarget:self action:@selector(rightProfileButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     [buttonView setBackgroundImage:[UIImage imageNamed:@"user1.png"] forState:UIControlStateNormal];
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:buttonView];
     
-    UIButton *buttonView2 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    UIButton *buttonView2 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
     [buttonView2 addTarget:self action:@selector(rightNotifButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     [buttonView2 setBackgroundImage:[UIImage imageNamed:@"notif.png"] forState:UIControlStateNormal];
     UIBarButtonItem *barButton2 = [[UIBarButtonItem alloc] initWithCustomView:buttonView2];
 
     [self.navigationItem setRightBarButtonItems:@[barButton2,barButton]];
 
-    UIButton *buttonView1 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    UIButton *buttonView1 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
     [buttonView1 addTarget:self action:@selector(leftButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     [buttonView1 setBackgroundImage:[UIImage imageNamed:@"plus.png"] forState:UIControlStateNormal];
     UIBarButtonItem *barButton1 = [[UIBarButtonItem alloc] initWithCustomView:buttonView1];
@@ -47,12 +47,12 @@
 
 -(void)changeNotifImage{
     
-    UIButton *buttonView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    UIButton *buttonView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
     [buttonView addTarget:self action:@selector(rightProfileButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     [buttonView setBackgroundImage:[UIImage imageNamed:@"user1.png"] forState:UIControlStateNormal];
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:buttonView];
     
-    UIButton *buttonView2 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    UIButton *buttonView2 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
     [buttonView2 addTarget:self action:@selector(rightNotifButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     [buttonView2 setBackgroundImage:[UIImage imageNamed:@"notiff.png"] forState:UIControlStateNormal];
     UIBarButtonItem *barButton2 = [[UIBarButtonItem alloc] initWithCustomView:buttonView2];
