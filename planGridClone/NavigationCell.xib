@@ -63,6 +63,13 @@
                 </constraints>
             </tableViewCellContentView>
             <animations/>
+            <connections>
+                <outlet property="lastUpdated" destination="exk-SC-QHl" id="APB-Yr-LKk"/>
+                <outlet property="moreDetails" destination="eBf-kO-A17" id="vwF-V2-63X"/>
+                <outlet property="smallImage" destination="Ily-fK-nmU" id="33C-6I-oxn"/>
+                <outlet property="title" destination="HaN-Zm-e5S" id="Xen-7u-ssY"/>
+                <outlet property="who" destination="dhY-PD-12Z" id="Rqi-dr-6Nv"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>

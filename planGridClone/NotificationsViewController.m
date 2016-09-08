@@ -57,15 +57,60 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return 8;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *MyIdentifier = @"cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
-    
+    NavigationCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    if(indexPath.row == 0){
+        cell.title.text = @"Architect Blueprints";
+        cell.moreDetails.text = @"For first floor";
+        cell.smallImage.image = [UIImage imageNamed:@"blueprint"];
+    }
+    else if(indexPath.row == 1){
+        cell.title.text = @"Paint Job [Exterior]";
+        cell.moreDetails.text = @"Weather proof job done";
+        cell.smallImage.image = [UIImage imageNamed:@"roller"];
+
+    }
+    else if(indexPath.row == 2){
+        cell.title.text = @"Garden Wall";
+        cell.moreDetails.text = @"Wall ready";
+        cell.smallImage.image = [UIImage imageNamed:@"wall"];
+
+    }
+    else if(indexPath.row == 3){
+        cell.title.text = @"Room Plan";
+        cell.moreDetails.text = @"Room plan done";
+        cell.smallImage.image = [UIImage imageNamed:@"rooms"];
+
+    }
+    else if(indexPath.row == 4){
+        cell.title.text = @"Civil Engineer Visiting";
+        cell.moreDetails.text = @"Today 12:00 pm";
+        cell.smallImage.image = [UIImage imageNamed:@"helmet"];
+
+    }
+    else if(indexPath.row == 5){
+        cell.title.text = @"Garden Landscaping";
+        cell.moreDetails.text = @"Today 1:00 pm";
+        cell.smallImage.image = [UIImage imageNamed:@"trees"];
+        
+    }
+    else if(indexPath.row == 6){
+        cell.title.text = @"Fence Around Garden";
+        cell.moreDetails.text = @"Today 1:00 pm";
+        cell.smallImage.image = [UIImage imageNamed:@"fence"];
+        
+    }
+    else if(indexPath.row == 7){
+        cell.title.text = @"Fountain";
+        cell.moreDetails.text = @"Today 1:00 pm";
+        cell.smallImage.image = [UIImage imageNamed:@"fountain"];
+        
+    }
     
     return cell;
 }

@@ -10,4 +10,11 @@
 
 @interface NavigationCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *smallImage;
+@property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UILabel *lastUpdated;
+@property (weak, nonatomic) IBOutlet UILabel *moreDetails;
+@property (weak, nonatomic) IBOutlet UILabel *who;
+
+
 @end

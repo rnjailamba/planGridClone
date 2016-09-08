@@ -32,6 +32,9 @@
 		63FBA4E41D81AFED00646E4D /* roller.png in Resources */ = {isa = PBXBuildFile; fileRef = 63FBA4DD1D81AFED00646E4D /* roller.png */; };
 		63FBA4E51D81AFED00646E4D /* rooms.png in Resources */ = {isa = PBXBuildFile; fileRef = 63FBA4DE1D81AFED00646E4D /* rooms.png */; };
 		63FBA4E61D81AFED00646E4D /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 63FBA4DF1D81AFED00646E4D /* wall.png */; };
+		63FBA4EA1D81BBEE00646E4D /* fence.png in Resources */ = {isa = PBXBuildFile; fileRef = 63FBA4E71D81BBEE00646E4D /* fence.png */; };
+		63FBA4EB1D81BBEE00646E4D /* fountain.png in Resources */ = {isa = PBXBuildFile; fileRef = 63FBA4E81D81BBEE00646E4D /* fountain.png */; };
+		63FBA4EC1D81BBEE00646E4D /* trees.png in Resources */ = {isa = PBXBuildFile; fileRef = 63FBA4E91D81BBEE00646E4D /* trees.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +70,9 @@
 		63FBA4DD1D81AFED00646E4D /* roller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roller.png; sourceTree = "<group>"; };
 		63FBA4DE1D81AFED00646E4D /* rooms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rooms.png; sourceTree = "<group>"; };
 		63FBA4DF1D81AFED00646E4D /* wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall.png; sourceTree = "<group>"; };
+		63FBA4E71D81BBEE00646E4D /* fence.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fence.png; sourceTree = "<group>"; };
+		63FBA4E81D81BBEE00646E4D /* fountain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fountain.png; sourceTree = "<group>"; };
+		63FBA4E91D81BBEE00646E4D /* trees.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trees.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +144,9 @@
 				63FBA4DB1D81AFED00646E4D /* blueprint1.png */,
 				63FBA4DC1D81AFED00646E4D /* helmet.png */,
 				63FBA4DD1D81AFED00646E4D /* roller.png */,
+				63FBA4E71D81BBEE00646E4D /* fence.png */,
+				63FBA4E81D81BBEE00646E4D /* fountain.png */,
+				63FBA4E91D81BBEE00646E4D /* trees.png */,
 				63FBA4DE1D81AFED00646E4D /* rooms.png */,
 				63FBA4DF1D81AFED00646E4D /* wall.png */,
 				63FBA4BE1D80FA9C00646E4D /* plus.png */,
@@ -214,14 +223,17 @@
 				63FBA4C71D8116B200646E4D /* notiff.png in Resources */,
 				63FBA4E21D81AFED00646E4D /* blueprint1.png in Resources */,
 				63FBA4CE1D81177100646E4D /* NotificationViewController.xib in Resources */,
+				63FBA4EC1D81BBEE00646E4D /* trees.png in Resources */,
 				63FBA4E01D81AFED00646E4D /* architect.png in Resources */,
 				63FBA4A91D806D6800646E4D /* Assets.xcassets in Resources */,
+				63FBA4EA1D81BBEE00646E4D /* fence.png in Resources */,
 				63FBA4D31D8121BA00646E4D /* NotificationsViewController.xib in Resources */,
 				63FBA4E11D81AFED00646E4D /* blueprint.png in Resources */,
 				63FBA4B91D80740100646E4D /* user.png in Resources */,
 				63FBA4E61D81AFED00646E4D /* wall.png in Resources */,
 				63FBA4E51D81AFED00646E4D /* rooms.png in Resources */,
 				63FBA4E31D81AFED00646E4D /* helmet.png in Resources */,
+				63FBA4EB1D81BBEE00646E4D /* fountain.png in Resources */,
 				63FBA4B61D806FCB00646E4D /* Default-568h@2x.png in Resources */,
 				63FBA4E41D81AFED00646E4D /* roller.png in Resources */,
 				63FBA4BF1D80FA9C00646E4D /* plus.png in Resources */,
