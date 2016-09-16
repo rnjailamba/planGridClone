@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "NotificationsViewController.h"
-
+#import "MessageViewController.h"
 
 @interface ViewController ()
 
@@ -123,7 +123,8 @@
 
 
 -(void)leftMessageClicked{
-    
+    MessageViewController *messageVC = [[MessageViewController alloc]initWithNibName:@"MessageViewController" bundle:nil];
+    [self.navigationController pushViewController:messageVC animated:YES];
     
 }
 
