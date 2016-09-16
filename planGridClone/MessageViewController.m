@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.frame = [[UIScreen mainScreen]bounds];
     [self setUpNavBar];
     // Do any additional setup after loading the view from its nib.
 }
@@ -37,7 +38,12 @@
 }
 
 -(void)newMessageClicked{
-    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:[[NewMessageViewController alloc]initWithNibName:@"NewMessageViewController" bundle:nil]];
+    NewMessageViewController *newMessageVC = [[NewMessageViewController alloc]initWithNibName:@"NewMessageViewController" bundle:nil];
+    NSLog(@"width%f",[UIScreen mainScreen].bounds.size.width);
+
+    newMessageVC.view.frame = [[UIScreen mainScreen] bounds ];
+    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:newMessageVC];
+    
     [self.navigationController presentViewController:navController animated:YES completion:nil];
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63837F5D1D8C428C004E7104 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63837F5C1D8C428C004E7104 /* LaunchScreen.storyboard */; };
 		63B26AAD1D8B6CF10033F305 /* inbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 63B26AAC1D8B6CF10033F305 /* inbox.png */; };
 		63B26AB11D8B70070033F305 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B26AAF1D8B70070033F305 /* MessageViewController.m */; };
 		63B26AB21D8B70070033F305 /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B26AB01D8B70070033F305 /* MessageViewController.xib */; };
@@ -54,6 +55,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63837F5C1D8C428C004E7104 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63B26AAC1D8B6CF10033F305 /* inbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inbox.png; sourceTree = "<group>"; };
 		63B26AAE1D8B70070033F305 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		63B26AAF1D8B70070033F305 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				63FBA49C1D806D6800646E4D /* Supporting Files */,
 				63FBA4A81D806D6800646E4D /* Assets.xcassets */,
 				63FBA4AD1D806D6800646E4D /* Info.plist */,
+				63837F5C1D8C428C004E7104 /* LaunchScreen.storyboard */,
 				63FBA49F1D806D6800646E4D /* AppDelegate.h */,
 				63FBA4A01D806D6800646E4D /* AppDelegate.m */,
 				63FBA4A21D806D6800646E4D /* ViewController.h */,
@@ -299,6 +302,7 @@
 				63FBA4E31D81AFED00646E4D /* helmet.png in Resources */,
 				63FBA4EB1D81BBEE00646E4D /* fountain.png in Resources */,
 				63FBA4F11D81C34700646E4D /* correct.png in Resources */,
+				63837F5D1D8C428C004E7104 /* LaunchScreen.storyboard in Resources */,
 				63FBA4B61D806FCB00646E4D /* Default-568h@2x.png in Resources */,
 				63FBA4E41D81AFED00646E4D /* roller.png in Resources */,
 				63FBA4BF1D80FA9C00646E4D /* plus.png in Resources */,
@@ -418,6 +422,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rnjailamba.planGridClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -429,6 +434,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rnjailamba.planGridClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.frame = [[UIScreen mainScreen]bounds];
     [self setUpNavBar];
     [self performSelector:@selector(changeNotifImage) withObject:nil afterDelay:1.0];
 

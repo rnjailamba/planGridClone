@@ -156,17 +156,17 @@
         UIView *chatView;
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, 10, self.view.frame.size.width, 20)];
         if(indexPath.row == 0){
-            chatView = [[UIView alloc]initWithFrame:CGRectMake(20, 20, 200, 100)];
-            label.text = @"constructionExpert";
+            chatView = [[UIView alloc]initWithFrame:CGRectMake(20, 0, 200, cell.frame.size.height)];
+            label.text = @"hi i wanted to ask a question.";
             
         }
         else if(indexPath.row == 1){
-            chatView = [[UIView alloc]initWithFrame:CGRectMake(100, 20, 200, 100)];
+            chatView = [[UIView alloc]initWithFrame:CGRectMake(100, 0, 200, cell.frame.size.height)];
             label.text = @"constructionExpert";
             
         }
         else if(indexPath.row == 2){
-            chatView = [[UIView alloc]initWithFrame:CGRectMake(20, 20, 200, 100)];
+            chatView = [[UIView alloc]initWithFrame:CGRectMake(20, 0, 200, cell.frame.size.height)];
             label.text = @"constructionExpert";
             
         }
@@ -177,17 +177,17 @@
         
         CALayer *bottom = [CALayer layer];
         bottom.backgroundColor = [[UIColor blackColor] CGColor];
-        bottom.frame = CGRectMake(0, 99, 200, 1.0f);
+        bottom.frame = CGRectMake(0, cell.frame.size.height - 1, 200, 1.0f);
         [chatView.layer addSublayer:bottom];
 
         CALayer *left = [CALayer layer];
         left.backgroundColor = [[UIColor blackColor] CGColor];
-        left.frame = CGRectMake(0, 0, 1.0f, 100);
+        left.frame = CGRectMake(0, 0, 1.0f, cell.frame.size.height);
         [chatView.layer addSublayer:left];
 
         CALayer *right = [CALayer layer];
         right.backgroundColor = [[UIColor blackColor] CGColor];
-        right.frame = CGRectMake(199, 0, 1.0f, 100);
+        right.frame = CGRectMake(199, 0, 1.0f, cell.frame.size.height);
         [chatView.layer addSublayer:right];
         
         [chatView addSubview:label];
@@ -207,7 +207,18 @@
         return 40;
     }
     else if(tableView == self.chatTableView){
-        return 120;
+        if(indexPath.row == 0){
+            return 40;
+        }
+        else if(indexPath.row == 1){
+            return 40;
+        }
+        else if(indexPath.row == 2){
+            return 40;
+        }
+        else{
+            return 0;
+        }
     }
     else{
         return 0;
