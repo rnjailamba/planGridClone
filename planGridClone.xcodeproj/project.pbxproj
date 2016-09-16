@@ -10,6 +10,9 @@
 		63B26AAD1D8B6CF10033F305 /* inbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 63B26AAC1D8B6CF10033F305 /* inbox.png */; };
 		63B26AB11D8B70070033F305 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B26AAF1D8B70070033F305 /* MessageViewController.m */; };
 		63B26AB21D8B70070033F305 /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B26AB01D8B70070033F305 /* MessageViewController.xib */; };
+		63B26AB41D8BA6F30033F305 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 63B26AB31D8BA6F30033F305 /* edit.png */; };
+		63B26AB91D8BA7900033F305 /* NewMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B26AB71D8BA7900033F305 /* NewMessageViewController.m */; };
+		63B26ABA1D8BA7900033F305 /* NewMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B26AB81D8BA7900033F305 /* NewMessageViewController.xib */; };
 		63FBA49E1D806D6800646E4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FBA49D1D806D6800646E4D /* main.m */; };
 		63FBA4A11D806D6800646E4D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FBA4A01D806D6800646E4D /* AppDelegate.m */; };
 		63FBA4A41D806D6800646E4D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FBA4A31D806D6800646E4D /* ViewController.m */; };
@@ -55,6 +58,10 @@
 		63B26AAE1D8B70070033F305 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		63B26AAF1D8B70070033F305 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		63B26AB01D8B70070033F305 /* MessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageViewController.xib; sourceTree = "<group>"; };
+		63B26AB31D8BA6F30033F305 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
+		63B26AB61D8BA7900033F305 /* NewMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewMessageViewController.h; sourceTree = "<group>"; };
+		63B26AB71D8BA7900033F305 /* NewMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewMessageViewController.m; sourceTree = "<group>"; };
+		63B26AB81D8BA7900033F305 /* NewMessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewMessageViewController.xib; sourceTree = "<group>"; };
 		63FBA4991D806D6800646E4D /* planGridClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = planGridClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63FBA49D1D806D6800646E4D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		63FBA49F1D806D6800646E4D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -154,6 +161,9 @@
 				63B26AAE1D8B70070033F305 /* MessageViewController.h */,
 				63B26AAF1D8B70070033F305 /* MessageViewController.m */,
 				63B26AB01D8B70070033F305 /* MessageViewController.xib */,
+				63B26AB61D8BA7900033F305 /* NewMessageViewController.h */,
+				63B26AB71D8BA7900033F305 /* NewMessageViewController.m */,
+				63B26AB81D8BA7900033F305 /* NewMessageViewController.xib */,
 			);
 			path = planGridClone;
 			sourceTree = "<group>";
@@ -169,6 +179,7 @@
 		63FBA4B71D8073E200646E4D /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				63B26AB31D8BA6F30033F305 /* edit.png */,
 				63FBA4FF1D81CCA700646E4D /* notifff.png */,
 				63FBA4FD1D81CC6C00646E4D /* money.png */,
 				63FBA4D91D81AFED00646E4D /* architect.png */,
@@ -272,12 +283,14 @@
 				63FBA4E01D81AFED00646E4D /* architect.png in Resources */,
 				63FBA4A91D806D6800646E4D /* Assets.xcassets in Resources */,
 				63FBA4F31D81C34700646E4D /* warning.png in Resources */,
+				63B26ABA1D8BA7900033F305 /* NewMessageViewController.xib in Resources */,
 				63FBA4F61D81C6CC00646E4D /* visible.png in Resources */,
 				63FBA4EA1D81BBEE00646E4D /* fence.png in Resources */,
 				63FBA4D31D8121BA00646E4D /* NotificationsViewController.xib in Resources */,
 				63FBA4E11D81AFED00646E4D /* blueprint.png in Resources */,
 				63FBA4B91D80740100646E4D /* user.png in Resources */,
 				63B26AB21D8B70070033F305 /* MessageViewController.xib in Resources */,
+				63B26AB41D8BA6F30033F305 /* edit.png in Resources */,
 				63FBA4F21D81C34700646E4D /* newsletter.png in Resources */,
 				63FBA5001D81CCA700646E4D /* notifff.png in Resources */,
 				63FBA4E61D81AFED00646E4D /* wall.png in Resources */,
@@ -304,6 +317,7 @@
 				63FBA4D21D8121BA00646E4D /* NotificationsViewController.m in Sources */,
 				63FBA4A41D806D6800646E4D /* ViewController.m in Sources */,
 				63FBA4CD1D81177100646E4D /* NotificationViewController.m in Sources */,
+				63B26AB91D8BA7900033F305 /* NewMessageViewController.m in Sources */,
 				63FBA4D71D81AD1B00646E4D /* NavigationCell.m in Sources */,
 				63FBA4A11D806D6800646E4D /* AppDelegate.m in Sources */,
 				63FBA49E1D806D6800646E4D /* main.m in Sources */,
