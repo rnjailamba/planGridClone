@@ -21,6 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.frame = [[UIScreen mainScreen]bounds];
+    NSLog(@"%f",[UIScreen mainScreen].bounds.size.width);
     [self setUpNavBar];
     [self setUpSearchBar];
     [self setUpTableView];
@@ -33,6 +35,7 @@
     self.chatTableView.dataSource =self;
     [self.view addSubview:self.chatTableView];
     self.chatTableView.hidden = YES;
+    self.chatTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self registerChatNib];
     
 }
@@ -150,22 +153,37 @@
         for(UIView *view in cell.contentView.subviews){
             [view removeFromSuperview];
         }
-        
+        UIView *chatView;
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, 10, self.view.frame.size.width, 20)];
         if(indexPath.row == 0){
+            chatView = [[UIView alloc]initWithFrame:CGRectMake(20, 20, 300, 100)];
+            CALayer *upperBorder = [CALayer layer];
+            upperBorder.backgroundColor = [[UIColor blackColor] CGColor];
+            upperBorder.frame = CGRectMake(0, 0, 300, 1.0f);
+            [chatView.layer addSublayer:upperBorder];
             label.text = [NSString stringWithFormat:@"architect@%@.com",self.currentSearch];
             
         }
         else if(indexPath.row == 1){
+            chatView = [[UIView alloc]initWithFrame:CGRectMake(20, 20, 300, 100)];
+            CALayer *upperBorder = [CALayer layer];
+            upperBorder.backgroundColor = [[UIColor blackColor] CGColor];
+            upperBorder.frame = CGRectMake(0, 0, 300, 1.0f);
+            [chatView.layer addSublayer:upperBorder];
             label.text = [NSString stringWithFormat:@"constructionExpert@%@.com",self.currentSearch];
             
         }
         else if(indexPath.row == 2){
+            chatView = [[UIView alloc]initWithFrame:CGRectMake(20, 20, 300, 100)];
+            CALayer *upperBorder = [CALayer layer];
+            upperBorder.backgroundColor = [[UIColor blackColor] CGColor];
+            upperBorder.frame = CGRectMake(0, 0, 20, 1.0f);
+            [chatView.layer addSublayer:upperBorder];
             label.text = [NSString stringWithFormat:@"civilEngineer@%@.com",self.currentSearch];
             
         }
-        
-        [cell.contentView addSubview:label];
+        [chatView addSubview:label];
+        [cell.contentView addSubview:chatView];
         
         return cell;
     }
@@ -181,7 +199,7 @@
         return 40;
     }
     else if(tableView == self.chatTableView){
-        return 40;
+        return 100;
     }
     else{
         return 0;
