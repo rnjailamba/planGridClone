@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpNavBar];
-    [self performSelector:@selector(changeNotifImage) withObject:nil afterDelay:1.0];
+    [self performSelector:@selector(changeNotifImage) withObject:nil afterDelay:2.0];
 
 }
 
@@ -36,13 +36,20 @@
     [buttonView2 setBackgroundImage:[UIImage imageNamed:@"notif.png"] forState:UIControlStateNormal];
     UIBarButtonItem *barButton2 = [[UIBarButtonItem alloc] initWithCustomView:buttonView2];
 
-    [self.navigationItem setRightBarButtonItems:@[barButton2,barButton]];
 
     UIButton *buttonView1 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
-    [buttonView1 addTarget:self action:@selector(leftButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    [buttonView1 addTarget:self action:@selector(leftAddClicked) forControlEvents:UIControlEventTouchUpInside];
     [buttonView1 setBackgroundImage:[UIImage imageNamed:@"plus.png"] forState:UIControlStateNormal];
     UIBarButtonItem *barButton1 = [[UIBarButtonItem alloc] initWithCustomView:buttonView1];
-    [self.navigationItem setLeftBarButtonItem:barButton1];
+    
+    UIButton *buttonView3 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
+    [buttonView3 addTarget:self action:@selector(leftMessageClicked) forControlEvents:UIControlEventTouchUpInside];
+    [buttonView3 setBackgroundImage:[UIImage imageNamed:@"inbox.png"] forState:UIControlStateNormal];
+    UIBarButtonItem *barButton3 = [[UIBarButtonItem alloc] initWithCustomView:buttonView3];
+    
+    [self.navigationItem setLeftBarButtonItems:@[barButton1,barButton]];
+    [self.navigationItem setRightBarButtonItems:@[barButton3,barButton2]];
+
 }
 
 -(void)changeNotifImage{
@@ -57,7 +64,19 @@
     [buttonView2 setBackgroundImage:[UIImage imageNamed:@"notiff.png"] forState:UIControlStateNormal];
     UIBarButtonItem *barButton2 = [[UIBarButtonItem alloc] initWithCustomView:buttonView2];
     
-    [self.navigationItem setRightBarButtonItems:@[barButton2,barButton]];
+    
+    UIButton *buttonView1 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
+    [buttonView1 addTarget:self action:@selector(leftAddClicked) forControlEvents:UIControlEventTouchUpInside];
+    [buttonView1 setBackgroundImage:[UIImage imageNamed:@"plus.png"] forState:UIControlStateNormal];
+    UIBarButtonItem *barButton1 = [[UIBarButtonItem alloc] initWithCustomView:buttonView1];
+    
+    UIButton *buttonView3 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
+    [buttonView3 addTarget:self action:@selector(leftMessageClicked) forControlEvents:UIControlEventTouchUpInside];
+    [buttonView3 setBackgroundImage:[UIImage imageNamed:@"inbox.png"] forState:UIControlStateNormal];
+    UIBarButtonItem *barButton3 = [[UIBarButtonItem alloc] initWithCustomView:buttonView3];
+    
+    [self.navigationItem setLeftBarButtonItems:@[barButton1,barButton]];
+    [self.navigationItem setRightBarButtonItems:@[barButton3,barButton2]];
 }
 
 -(void)rightProfileButtonClicked{
@@ -97,10 +116,17 @@
     [self.navigationController presentViewController:navigationController animated:YES completion:nil];
 }
 
--(void)leftButtonClicked{
+-(void)leftAddClicked{
  
     
 }
+
+
+-(void)leftMessageClicked{
+    
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
