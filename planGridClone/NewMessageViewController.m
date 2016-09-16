@@ -125,6 +125,25 @@
     
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"did select %ld",(long)indexPath.row);
+    self.tableView.hidden = YES;
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 44)];
+    view.backgroundColor = [UIColor lightGrayColor];
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, 12, self.view.frame.size.width, 20)];
+    if(indexPath.row == 0){
+        label.text = [NSString stringWithFormat:@"To: architect@%@.com",self.currentSearch];;
+    }
+    else if(indexPath.row == 1){
+        label.text = [NSString stringWithFormat:@"To: constructionExpert@%@.com",self.currentSearch];
+    }
+    else if(indexPath.row == 2){
+        label.text = [NSString stringWithFormat:@"To: civilEngineer@%@.com",self.currentSearch];
+    }
+    [view addSubview:label];
+    [self.view addSubview:view];
+}
+
 
 
 @end
