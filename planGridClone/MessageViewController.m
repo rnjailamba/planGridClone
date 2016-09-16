@@ -39,11 +39,8 @@
 
 -(void)newMessageClicked{
     NewMessageViewController *newMessageVC = [[NewMessageViewController alloc]initWithNibName:@"NewMessageViewController" bundle:nil];
-    NSLog(@"width%f",[UIScreen mainScreen].bounds.size.width);
-
     newMessageVC.view.frame = [[UIScreen mainScreen] bounds ];
     UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:newMessageVC];
-    
     [self.navigationController presentViewController:navController animated:YES completion:nil];
 }
 

@@ -10,7 +10,7 @@
 
 #define cellHt1 50
 #define cellHt2 50
-#define cellHt3 50
+#define cellHt3 80
 
 @interface NewMessageViewController ()<UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate>
 
@@ -158,23 +158,23 @@
             [view removeFromSuperview];
         }
         UIView *chatView;
-        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, 10, self.view.frame.size.width, 20)];
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, 10, 230, 20)];
         if(indexPath.row == 0){
-            chatView = [[UIView alloc]initWithFrame:CGRectMake(20, 10, 250, 40)];
-            NSLog(@"ht%f",cell.frame.size.height);
-            NSLog(@"wid%f",cell.frame.size.width);
+            chatView = [[UIView alloc]initWithFrame:CGRectMake(20, 10, 250, cellHt1)];
             label.text = @"hi i wanted to ask a question.";
             
         }
         else if(indexPath.row == 1){
-            chatView = [[UIView alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 220, 10, 200, 40)];
-            label.text = @"constructionExpert";
+            chatView = [[UIView alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 220, 10, 200, cellHt2)];
+            label.text = @"yes please go ahead";
             label.textAlignment = NSTextAlignmentLeft;
             
         }
         else if(indexPath.row == 2){
-            chatView = [[UIView alloc]initWithFrame:CGRectMake(20, 10, 200, 40)];
-            label.text = @"constructionExpert";
+            chatView = [[UIView alloc]initWithFrame:CGRectMake(20, 10, 250, cellHt3)];
+            label.text = @"i wanted to know more about the material being used for the roofing.";
+            label.numberOfLines = 0; //will wrap text in new line
+            [label sizeToFit];
         }
         CALayer *upperBorder = [CALayer layer];
         upperBorder.backgroundColor = [[UIColor blackColor] CGColor];
@@ -198,7 +198,7 @@
         
         [chatView addSubview:label];
         [cell.contentView addSubview:chatView];
-        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
     else{
