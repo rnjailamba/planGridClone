@@ -8,7 +8,11 @@
 
 #import "NewMessageViewController.h"
 
-@interface NewMessageViewController ()
+@interface NewMessageViewController ()<UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong) UITableView *tableView;
+@property (strong) NSString *currentSearch;
 
 @end
 
@@ -17,8 +21,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpNavBar];
-//    [self setUpTableView];
-//    [self registerNib];
+    [self setUpSearchBar];
+    [self setUpTableView];
+}
+
+-(void)setUpTableView{
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 108, self.view.frame.size.width, self.view.frame.size.height-108) style:UITableViewStylePlain];
+    self.tableView.delegate = self;
+    self.tableView.dataSource =self;
+    [self.view addSubview:self.tableView];
+    self.tableView.hidden = YES;
+    [self registerNib];
+
+}
+
+-(void)registerNib{
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+}
+
+-(void)setUpSearchBar{
+    [self.searchBar becomeFirstResponder];
+    self.searchBar.delegate = self;
 }
 
 -(void)setUpNavBar{
@@ -36,14 +59,72 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma UISearchBarDelegate
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    NSLog(@"%@",searchBar.text);
+    if(searchBar.text.length > 0){
+        [self handleSearch:searchBar.text];
+    }
+    else{
+        self.tableView.hidden = YES;
+    }
 }
-*/
+
+-(void)handleSearch:(NSString *)searchText{
+    self.currentSearch = searchText;
+    [self.tableView reloadData];
+    [self.tableView setHidden:NO];
+    
+}
+
+#pragma UITableViewDelegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;    //count of section
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return 3;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *MyIdentifier = @"cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    
+    for(UIView *view in cell.contentView.subviews){
+        [view removeFromSuperview];
+    }
+    
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, 10, self.view.frame.size.width, 20)];
+    if(indexPath.row == 0){
+        label.text = [NSString stringWithFormat:@"architect@%@.com",self.currentSearch];
+
+    }
+    else if(indexPath.row == 1){
+        label.text = [NSString stringWithFormat:@"constructionExpert@%@.com",self.currentSearch];
+
+    }
+    else if(indexPath.row == 2){
+        label.text = [NSString stringWithFormat:@"civilEngineer@%@.com",self.currentSearch];
+        
+    }
+    
+    [cell.contentView addSubview:label];
+
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return 40;
+    
+}
+
+
 
 @end
