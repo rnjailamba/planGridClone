@@ -8,6 +8,10 @@
 
 #import "NewMessageViewController.h"
 
+#define cellHt1 50
+#define cellHt2 50
+#define cellHt3 50
+
 @interface NewMessageViewController ()<UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -156,21 +160,21 @@
         UIView *chatView;
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, 10, self.view.frame.size.width, 20)];
         if(indexPath.row == 0){
-            chatView = [[UIView alloc]initWithFrame:CGRectMake(20, 0, 200, 40)];
+            chatView = [[UIView alloc]initWithFrame:CGRectMake(20, 10, 250, 40)];
             NSLog(@"ht%f",cell.frame.size.height);
             NSLog(@"wid%f",cell.frame.size.width);
             label.text = @"hi i wanted to ask a question.";
             
         }
         else if(indexPath.row == 1){
-            chatView = [[UIView alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 220, 0, 200, 40)];
+            chatView = [[UIView alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 220, 10, 200, 40)];
             label.text = @"constructionExpert";
+            label.textAlignment = NSTextAlignmentLeft;
             
         }
         else if(indexPath.row == 2){
-            chatView = [[UIView alloc]initWithFrame:CGRectMake(20, 0, 200, 40)];
+            chatView = [[UIView alloc]initWithFrame:CGRectMake(20, 10, 200, 40)];
             label.text = @"constructionExpert";
-            
         }
         CALayer *upperBorder = [CALayer layer];
         upperBorder.backgroundColor = [[UIColor blackColor] CGColor];
@@ -210,13 +214,13 @@
     }
     else if(tableView == self.chatTableView){
         if(indexPath.row == 0){
-            return 40;
+            return cellHt1;
         }
         else if(indexPath.row == 1){
-            return 40;
+            return cellHt2;
         }
         else if(indexPath.row == 2){
-            return 40;
+            return cellHt3;
         }
         else{
             return 0;
