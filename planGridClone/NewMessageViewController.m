@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong) UITableView *tableView;
+@property (strong) UITableView *chatTableView;
 @property (strong) NSString *currentSearch;
 
 @end
@@ -23,6 +24,17 @@
     [self setUpNavBar];
     [self setUpSearchBar];
     [self setUpTableView];
+    [self setUpChatTableView];
+}
+
+-(void)setUpChatTableView{
+    self.chatTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 108, self.view.frame.size.width, self.view.frame.size.height-108) style:UITableViewStylePlain];
+    self.chatTableView.delegate = self;
+    self.chatTableView.dataSource =self;
+    [self.view addSubview:self.chatTableView];
+    self.chatTableView.hidden = YES;
+    [self registerChatNib];
+    
 }
 
 -(void)setUpTableView{
@@ -37,6 +49,10 @@
 
 -(void)registerNib{
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+}
+
+-(void)registerChatNib{
+    [self.chatTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"chatCell"];
 }
 
 -(void)setUpSearchBar{
@@ -81,7 +97,15 @@
 #pragma UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;    //count of section
+    if(tableView == self.tableView){
+        return 1;
+    }
+    else if(tableView == self.chatTableView){
+        return 1;
+    }
+    else{
+        return 0;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -91,41 +115,81 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *MyIdentifier = @"cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
-    
-    for(UIView *view in cell.contentView.subviews){
-        [view removeFromSuperview];
-    }
-    
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, 10, self.view.frame.size.width, 20)];
-    if(indexPath.row == 0){
-        label.text = [NSString stringWithFormat:@"architect@%@.com",self.currentSearch];
-
-    }
-    else if(indexPath.row == 1){
-        label.text = [NSString stringWithFormat:@"constructionExpert@%@.com",self.currentSearch];
-
-    }
-    else if(indexPath.row == 2){
-        label.text = [NSString stringWithFormat:@"civilEngineer@%@.com",self.currentSearch];
+    if(tableView == self.tableView){
+        static NSString *MyIdentifier = @"cell";
         
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+        
+        for(UIView *view in cell.contentView.subviews){
+            [view removeFromSuperview];
+        }
+        
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, 10, self.view.frame.size.width, 20)];
+        if(indexPath.row == 0){
+            label.text = [NSString stringWithFormat:@"architect@%@.com",self.currentSearch];
+            
+        }
+        else if(indexPath.row == 1){
+            label.text = [NSString stringWithFormat:@"constructionExpert@%@.com",self.currentSearch];
+            
+        }
+        else if(indexPath.row == 2){
+            label.text = [NSString stringWithFormat:@"civilEngineer@%@.com",self.currentSearch];
+            
+        }
+        
+        [cell.contentView addSubview:label];
+        
+        return cell;
     }
-    
-    [cell.contentView addSubview:label];
-
-    return cell;
+    else if(tableView == self.chatTableView){
+        static NSString *MyIdentifier = @"chatCell";
+        
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+        
+        for(UIView *view in cell.contentView.subviews){
+            [view removeFromSuperview];
+        }
+        
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, 10, self.view.frame.size.width, 20)];
+        if(indexPath.row == 0){
+            label.text = [NSString stringWithFormat:@"architect@%@.com",self.currentSearch];
+            
+        }
+        else if(indexPath.row == 1){
+            label.text = [NSString stringWithFormat:@"constructionExpert@%@.com",self.currentSearch];
+            
+        }
+        else if(indexPath.row == 2){
+            label.text = [NSString stringWithFormat:@"civilEngineer@%@.com",self.currentSearch];
+            
+        }
+        
+        [cell.contentView addSubview:label];
+        
+        return cell;
+    }
+    else{
+        return nil;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    return 40;
-    
+    if(tableView == self.tableView){
+        return 40;
+    }
+    else if(tableView == self.chatTableView){
+        return 40;
+    }
+    else{
+        return 0;
+    }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     NSLog(@"did select %ld",(long)indexPath.row);
     self.tableView.hidden = YES;
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 44)];
@@ -142,6 +206,7 @@
     }
     [view addSubview:label];
     [self.view addSubview:view];
+    self.chatTableView.hidden = NO;
 }
 
 
