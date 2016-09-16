@@ -156,38 +156,40 @@
         UIView *chatView;
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, 10, self.view.frame.size.width, 20)];
         if(indexPath.row == 0){
-            chatView = [[UIView alloc]initWithFrame:CGRectMake(20, 0, 200, cell.frame.size.height)];
+            chatView = [[UIView alloc]initWithFrame:CGRectMake(20, 0, 200, 40)];
+            NSLog(@"ht%f",cell.frame.size.height);
+            NSLog(@"wid%f",cell.frame.size.width);
             label.text = @"hi i wanted to ask a question.";
             
         }
         else if(indexPath.row == 1){
-            chatView = [[UIView alloc]initWithFrame:CGRectMake(100, 0, 200, cell.frame.size.height)];
+            chatView = [[UIView alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 220, 0, 200, 40)];
             label.text = @"constructionExpert";
             
         }
         else if(indexPath.row == 2){
-            chatView = [[UIView alloc]initWithFrame:CGRectMake(20, 0, 200, cell.frame.size.height)];
+            chatView = [[UIView alloc]initWithFrame:CGRectMake(20, 0, 200, 40)];
             label.text = @"constructionExpert";
             
         }
         CALayer *upperBorder = [CALayer layer];
         upperBorder.backgroundColor = [[UIColor blackColor] CGColor];
-        upperBorder.frame = CGRectMake(0, 0, 200, 1.0f);
+        upperBorder.frame = CGRectMake(0, 0, chatView.frame.size.width, 1.0f);
         [chatView.layer addSublayer:upperBorder];
         
         CALayer *bottom = [CALayer layer];
         bottom.backgroundColor = [[UIColor blackColor] CGColor];
-        bottom.frame = CGRectMake(0, cell.frame.size.height - 1, 200, 1.0f);
+        bottom.frame = CGRectMake(0, chatView.frame.size.height - 1, chatView.frame.size.width, 1.0f);
         [chatView.layer addSublayer:bottom];
 
         CALayer *left = [CALayer layer];
         left.backgroundColor = [[UIColor blackColor] CGColor];
-        left.frame = CGRectMake(0, 0, 1.0f, cell.frame.size.height);
+        left.frame = CGRectMake(0, 0, 1.0f, chatView.frame.size.height);
         [chatView.layer addSublayer:left];
 
         CALayer *right = [CALayer layer];
         right.backgroundColor = [[UIColor blackColor] CGColor];
-        right.frame = CGRectMake(199, 0, 1.0f, cell.frame.size.height);
+        right.frame = CGRectMake(chatView.frame.size.width - 1, 0, 1.0f, chatView.frame.size.height);
         [chatView.layer addSublayer:right];
         
         [chatView addSubview:label];
