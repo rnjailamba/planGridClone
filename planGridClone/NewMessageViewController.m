@@ -156,32 +156,40 @@
         UIView *chatView;
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, 10, self.view.frame.size.width, 20)];
         if(indexPath.row == 0){
-            chatView = [[UIView alloc]initWithFrame:CGRectMake(20, 20, 300, 100)];
-            CALayer *upperBorder = [CALayer layer];
-            upperBorder.backgroundColor = [[UIColor blackColor] CGColor];
-            upperBorder.frame = CGRectMake(0, 0, 300, 1.0f);
-            [chatView.layer addSublayer:upperBorder];
-            label.text = [NSString stringWithFormat:@"architect@%@.com",self.currentSearch];
+            chatView = [[UIView alloc]initWithFrame:CGRectMake(20, 20, 200, 100)];
+            label.text = @"constructionExpert";
             
         }
         else if(indexPath.row == 1){
-            chatView = [[UIView alloc]initWithFrame:CGRectMake(20, 20, 300, 100)];
-            CALayer *upperBorder = [CALayer layer];
-            upperBorder.backgroundColor = [[UIColor blackColor] CGColor];
-            upperBorder.frame = CGRectMake(0, 0, 300, 1.0f);
-            [chatView.layer addSublayer:upperBorder];
-            label.text = [NSString stringWithFormat:@"constructionExpert@%@.com",self.currentSearch];
+            chatView = [[UIView alloc]initWithFrame:CGRectMake(100, 20, 200, 100)];
+            label.text = @"constructionExpert";
             
         }
         else if(indexPath.row == 2){
-            chatView = [[UIView alloc]initWithFrame:CGRectMake(20, 20, 300, 100)];
-            CALayer *upperBorder = [CALayer layer];
-            upperBorder.backgroundColor = [[UIColor blackColor] CGColor];
-            upperBorder.frame = CGRectMake(0, 0, 20, 1.0f);
-            [chatView.layer addSublayer:upperBorder];
-            label.text = [NSString stringWithFormat:@"civilEngineer@%@.com",self.currentSearch];
+            chatView = [[UIView alloc]initWithFrame:CGRectMake(20, 20, 200, 100)];
+            label.text = @"constructionExpert";
             
         }
+        CALayer *upperBorder = [CALayer layer];
+        upperBorder.backgroundColor = [[UIColor blackColor] CGColor];
+        upperBorder.frame = CGRectMake(0, 0, 200, 1.0f);
+        [chatView.layer addSublayer:upperBorder];
+        
+        CALayer *bottom = [CALayer layer];
+        bottom.backgroundColor = [[UIColor blackColor] CGColor];
+        bottom.frame = CGRectMake(0, 99, 200, 1.0f);
+        [chatView.layer addSublayer:bottom];
+
+        CALayer *left = [CALayer layer];
+        left.backgroundColor = [[UIColor blackColor] CGColor];
+        left.frame = CGRectMake(0, 0, 1.0f, 100);
+        [chatView.layer addSublayer:left];
+
+        CALayer *right = [CALayer layer];
+        right.backgroundColor = [[UIColor blackColor] CGColor];
+        right.frame = CGRectMake(199, 0, 1.0f, 100);
+        [chatView.layer addSublayer:right];
+        
         [chatView addSubview:label];
         [cell.contentView addSubview:chatView];
         
@@ -199,7 +207,7 @@
         return 40;
     }
     else if(tableView == self.chatTableView){
-        return 100;
+        return 120;
     }
     else{
         return 0;
