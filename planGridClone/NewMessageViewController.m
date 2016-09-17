@@ -53,10 +53,16 @@ alpha:1.0]
     [self.view addSubview:self.textField];
     [self.textField becomeFirstResponder];
     
+    //top border
     CALayer *top = [CALayer layer];
     top.frame = CGRectMake(0.0f, 0, self.view.frame.size.width, 1.0f);
     top.backgroundColor = [UIColor blackColor].CGColor;
     [self.textField.layer addSublayer:top];
+    
+    //left padding
+    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 44)];
+    self.textField.leftView = paddingView;
+    self.textField.leftViewMode = UITextFieldViewModeAlways;
 }
 
 -(void)setUpChatTableView{
