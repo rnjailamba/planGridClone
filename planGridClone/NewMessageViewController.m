@@ -22,8 +22,9 @@ alpha:1.0]
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong) UITableView *tableView;
-@property (strong) UITableView *chatTableView;
-@property (strong) NSString *currentSearch;
+@property (strong,nonatomic) UITableView *chatTableView;
+@property (strong,nonatomic) NSString *currentSearch;
+@property (strong,nonatomic) UITextField *textField;
 
 @end
 
@@ -37,10 +38,19 @@ alpha:1.0]
     [self setUpSearchBar];
     [self setUpTableView];
     [self setUpChatTableView];
+
+}
+
+-(void)setUpLabelForMessageWriting{
+    self.textField = [[UITextField alloc]initWithFrame:CGRectMake(20, self.view.frame.size.height- 44 - 172 - 44, self.view.frame.size.width, 44)];
+    self.textField.placeholder = @"Write message...";
+    self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
+    [self.view addSubview:self.textField];
+    [self.textField becomeFirstResponder];
 }
 
 -(void)setUpChatTableView{
-    self.chatTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 108, self.view.frame.size.width, self.view.frame.size.height-108) style:UITableViewStylePlain];
+    self.chatTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 108, self.view.frame.size.width, self.view.frame.size.height-108 - 44) style:UITableViewStylePlain];
     self.chatTableView.delegate = self;
     self.chatTableView.dataSource =self;
     [self.view addSubview:self.chatTableView];
@@ -51,7 +61,7 @@ alpha:1.0]
 }
 
 -(void)setUpTableView{
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 108, self.view.frame.size.width, self.view.frame.size.height-108) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 108, self.view.frame.size.width, self.view.frame.size.height-108 - 44) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource =self;
     [self.view addSubview:self.tableView];
@@ -86,6 +96,7 @@ alpha:1.0]
 
 -(void)doneClicked{
     [self.searchBar resignFirstResponder];
+    [self.textField resignFirstResponder];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -242,7 +253,6 @@ alpha:1.0]
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     NSLog(@"did select %ld",(long)indexPath.row);
     self.tableView.hidden = YES;
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 44)];
@@ -260,7 +270,101 @@ alpha:1.0]
     [view addSubview:label];
     [self.view addSubview:view];
     self.chatTableView.hidden = NO;
+    [self setUpLabelForMessageWriting];
 }
+
+//#pragma Keyboard
+//
+//#define kOFFSET_FOR_KEYBOARD (44.0 + 172)
+//
+//-(void)keyboardWillShow {
+//    // Animate the current view out of the way
+//    if (self.view.frame.origin.y >= 0)
+//    {
+//        [self setViewMovedUp:YES];
+//    }
+//    else if (self.view.frame.origin.y < 0)
+//    {
+//        [self setViewMovedUp:NO];
+//    }
+//}
+//
+//-(void)keyboardWillHide {
+//    if (self.view.frame.origin.y >= 0)
+//    {
+//        [self setViewMovedUp:YES];
+//    }
+//    else if (self.view.frame.origin.y < 0)
+//    {
+//        [self setViewMovedUp:NO];
+//    }
+//}
+//
+//-(void)textFieldDidBeginEditing:(UITextField *)sender
+//{
+//    if (true)
+//    {
+//        //move the main view, so that the keyboard does not hide it.
+//        if  (self.view.frame.origin.y >= 0)
+//        {
+//            [self setViewMovedUp:YES];
+//        }
+//    }
+//}
+//
+////method to move the view up/down whenever the keyboard is shown/dismissed
+//-(void)setViewMovedUp:(BOOL)movedUp
+//{
+//    [UIView beginAnimations:nil context:NULL];
+//    [UIView setAnimationDuration:0.3]; // if you want to slide up the view
+//    
+//    CGRect rect = self.view.frame;
+//    if (movedUp)
+//    {
+//        // 1. move the view's origin up so that the text field that will be hidden come above the keyboard
+//        // 2. increase the size of the view so that the area behind the keyboard is covered up.
+//        rect.origin.y -= kOFFSET_FOR_KEYBOARD;
+//        rect.size.height += kOFFSET_FOR_KEYBOARD;
+//    }
+//    else
+//    {
+//        // revert back to the normal state.
+//        rect.origin.y += kOFFSET_FOR_KEYBOARD;
+//        rect.size.height -= kOFFSET_FOR_KEYBOARD;
+//    }
+//    self.view.frame = rect;
+//    
+//    [UIView commitAnimations];
+//}
+//
+//
+//- (void)viewWillAppear:(BOOL)animated
+//{
+//    [super viewWillAppear:animated];
+//    // register for keyboard notifications
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(keyboardWillShow)
+//                                                 name:UIKeyboardWillShowNotification
+//                                               object:nil];
+//    
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(keyboardWillHide)
+//                                                 name:UIKeyboardWillHideNotification
+//                                               object:nil];
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated
+//{
+//    [super viewWillDisappear:animated];
+//    // unregister for keyboard notifications while not visible.
+//    [[NSNotificationCenter defaultCenter] removeObserver:self
+//                                                    name:UIKeyboardWillShowNotification
+//                                                  object:nil];
+//    
+//    [[NSNotificationCenter defaultCenter] removeObserver:self
+//                                                    name:UIKeyboardWillHideNotification
+//                                                  object:nil];
+//}
 
 
 
