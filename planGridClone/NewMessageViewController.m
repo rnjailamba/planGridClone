@@ -18,7 +18,7 @@ green:((float)((rgbValue & 0x00FF00) >>  8))/255.0 \
 blue:((float)((rgbValue & 0x0000FF) >>  0))/255.0 \
 alpha:1.0]
 
-@interface NewMessageViewController ()<UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface NewMessageViewController ()<UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong) UITableView *tableView;
@@ -45,13 +45,18 @@ alpha:1.0]
 }
 
 -(void)setUpLabelForMessageWriting{
-    self.textField = [[UITextField alloc]initWithFrame:CGRectMake(20, self.view.frame.size.height- 44 - 172 - 44, self.view.frame.size.width, 44)];
+    self.textField = [[UITextField alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height- 44 - 172 - 44, self.view.frame.size.width, 44)];
     self.textField.placeholder = @"Write message...";
     self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
     [self.textField setReturnKeyType:UIReturnKeySend];
     self.textField.delegate = self;
     [self.view addSubview:self.textField];
     [self.textField becomeFirstResponder];
+    
+    CALayer *top = [CALayer layer];
+    top.frame = CGRectMake(0.0f, 0, self.view.frame.size.width, 1.0f);
+    top.backgroundColor = [UIColor blackColor].CGColor;
+    [self.textField.layer addSublayer:top];
 }
 
 -(void)setUpChatTableView{
