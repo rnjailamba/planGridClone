@@ -26,6 +26,9 @@ alpha:1.0]
 @property (strong,nonatomic) NSString *currentSearch;
 @property (strong,nonatomic) UITextField *textField;
 
+@property (nonatomic) BOOL sentMessage;
+@property (strong,nonatomic) NSString *sendMessageText;
+
 @end
 
 @implementation NewMessageViewController
@@ -33,7 +36,7 @@ alpha:1.0]
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.frame = [[UIScreen mainScreen]bounds];
-    NSLog(@"%f",[UIScreen mainScreen].bounds.size.width);
+    self.sentMessage = NO;
     [self setUpNavBar];
     [self setUpSearchBar];
     [self setUpTableView];
@@ -45,6 +48,8 @@ alpha:1.0]
     self.textField = [[UITextField alloc]initWithFrame:CGRectMake(20, self.view.frame.size.height- 44 - 172 - 44, self.view.frame.size.width, 44)];
     self.textField.placeholder = @"Write message...";
     self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
+    [self.textField setReturnKeyType:UIReturnKeySend];
+    self.textField.delegate = self;
     [self.view addSubview:self.textField];
     [self.textField becomeFirstResponder];
 }
@@ -134,8 +139,18 @@ alpha:1.0]
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return 3;
+    if(tableView == self.tableView){
+        return 3;
+    }
+    else if(tableView == self.chatTableView){
+        if(self.sentMessage)
+            return 4;
+        else
+            return 3;
+    }
+    else{
+        return 0;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -196,6 +211,11 @@ alpha:1.0]
             label.text = @"i wanted to know more about the material being used for the roofing.";
             label.numberOfLines = 0; //will wrap text in new line
             [label sizeToFit];
+        }
+        else if(indexPath.row == 3){
+            chatView = [[UIView alloc]initWithFrame:CGRectMake(20, 10, 250, cellHt1 - padding)];
+            chatView.backgroundColor = UIColorFromRGB(0xecf0f1);
+            label.text = self.sendMessageText;
         }
         CALayer *upperBorder = [CALayer layer];
         upperBorder.backgroundColor = [[UIColor blackColor] CGColor];
@@ -273,99 +293,15 @@ alpha:1.0]
     [self setUpLabelForMessageWriting];
 }
 
-//#pragma Keyboard
-//
-//#define kOFFSET_FOR_KEYBOARD (44.0 + 172)
-//
-//-(void)keyboardWillShow {
-//    // Animate the current view out of the way
-//    if (self.view.frame.origin.y >= 0)
-//    {
-//        [self setViewMovedUp:YES];
-//    }
-//    else if (self.view.frame.origin.y < 0)
-//    {
-//        [self setViewMovedUp:NO];
-//    }
-//}
-//
-//-(void)keyboardWillHide {
-//    if (self.view.frame.origin.y >= 0)
-//    {
-//        [self setViewMovedUp:YES];
-//    }
-//    else if (self.view.frame.origin.y < 0)
-//    {
-//        [self setViewMovedUp:NO];
-//    }
-//}
-//
-//-(void)textFieldDidBeginEditing:(UITextField *)sender
-//{
-//    if (true)
-//    {
-//        //move the main view, so that the keyboard does not hide it.
-//        if  (self.view.frame.origin.y >= 0)
-//        {
-//            [self setViewMovedUp:YES];
-//        }
-//    }
-//}
-//
-////method to move the view up/down whenever the keyboard is shown/dismissed
-//-(void)setViewMovedUp:(BOOL)movedUp
-//{
-//    [UIView beginAnimations:nil context:NULL];
-//    [UIView setAnimationDuration:0.3]; // if you want to slide up the view
-//    
-//    CGRect rect = self.view.frame;
-//    if (movedUp)
-//    {
-//        // 1. move the view's origin up so that the text field that will be hidden come above the keyboard
-//        // 2. increase the size of the view so that the area behind the keyboard is covered up.
-//        rect.origin.y -= kOFFSET_FOR_KEYBOARD;
-//        rect.size.height += kOFFSET_FOR_KEYBOARD;
-//    }
-//    else
-//    {
-//        // revert back to the normal state.
-//        rect.origin.y += kOFFSET_FOR_KEYBOARD;
-//        rect.size.height -= kOFFSET_FOR_KEYBOARD;
-//    }
-//    self.view.frame = rect;
-//    
-//    [UIView commitAnimations];
-//}
-//
-//
-//- (void)viewWillAppear:(BOOL)animated
-//{
-//    [super viewWillAppear:animated];
-//    // register for keyboard notifications
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(keyboardWillShow)
-//                                                 name:UIKeyboardWillShowNotification
-//                                               object:nil];
-//    
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(keyboardWillHide)
-//                                                 name:UIKeyboardWillHideNotification
-//                                               object:nil];
-//}
-//
-//- (void)viewWillDisappear:(BOOL)animated
-//{
-//    [super viewWillDisappear:animated];
-//    // unregister for keyboard notifications while not visible.
-//    [[NSNotificationCenter defaultCenter] removeObserver:self
-//                                                    name:UIKeyboardWillShowNotification
-//                                                  object:nil];
-//    
-//    [[NSNotificationCenter defaultCenter] removeObserver:self
-//                                                    name:UIKeyboardWillHideNotification
-//                                                  object:nil];
-//}
-
-
+#pragma UITextField
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    self.textField.hidden = YES;
+    [textField resignFirstResponder];
+    NSLog(@"writter - %@",textField.text);
+    self.sendMessageText = textField.text;
+    self.sentMessage = YES;
+    [self.chatTableView reloadData];
+    return YES;
+}
 
 @end
