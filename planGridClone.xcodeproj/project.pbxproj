@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		630624D11D8E2BCE00EB0AF3 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 630624CF1D8E2BCE00EB0AF3 /* MessageCell.m */; };
+		630624D21D8E2BCE00EB0AF3 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 630624D01D8E2BCE00EB0AF3 /* MessageCell.xib */; };
+		630624D41D8E2E4D00EB0AF3 /* dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 630624D31D8E2E4D00EB0AF3 /* dot.png */; };
 		63837F5D1D8C428C004E7104 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63837F5C1D8C428C004E7104 /* LaunchScreen.storyboard */; };
 		639E2EC01D8D7E4700B6B320 /* Icon-App-83.5x83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 639E2EBF1D8D7E4700B6B320 /* Icon-App-83.5x83.5@2x.png */; };
 		63B26AAD1D8B6CF10033F305 /* inbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 63B26AAC1D8B6CF10033F305 /* inbox.png */; };
@@ -56,6 +59,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		630624CE1D8E2BCE00EB0AF3 /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
+		630624CF1D8E2BCE00EB0AF3 /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
+		630624D01D8E2BCE00EB0AF3 /* MessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		630624D31D8E2E4D00EB0AF3 /* dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot.png; sourceTree = "<group>"; };
 		63837F5C1D8C428C004E7104 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		639E2EBF1D8D7E4700B6B320 /* Icon-App-83.5x83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-83.5x83.5@2x.png"; sourceTree = "<group>"; };
 		63B26AAC1D8B6CF10033F305 /* inbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inbox.png; sourceTree = "<group>"; };
@@ -167,6 +174,9 @@
 				63B26AAE1D8B70070033F305 /* MessageViewController.h */,
 				63B26AAF1D8B70070033F305 /* MessageViewController.m */,
 				63B26AB01D8B70070033F305 /* MessageViewController.xib */,
+				630624CE1D8E2BCE00EB0AF3 /* MessageCell.h */,
+				630624CF1D8E2BCE00EB0AF3 /* MessageCell.m */,
+				630624D01D8E2BCE00EB0AF3 /* MessageCell.xib */,
 				63B26AB61D8BA7900033F305 /* NewMessageViewController.h */,
 				63B26AB71D8BA7900033F305 /* NewMessageViewController.m */,
 				63B26AB81D8BA7900033F305 /* NewMessageViewController.xib */,
@@ -185,6 +195,7 @@
 		63FBA4B71D8073E200646E4D /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				630624D31D8E2E4D00EB0AF3 /* dot.png */,
 				63B26AB31D8BA6F30033F305 /* edit.png */,
 				63FBA4FF1D81CCA700646E4D /* notifff.png */,
 				63FBA4FD1D81CC6C00646E4D /* money.png */,
@@ -278,6 +289,7 @@
 				63FBA4FA1D81CB5900646E4D /* notes.png in Resources */,
 				63FBA4BD1D80F32F00646E4D /* news.png in Resources */,
 				63FBA4C91D8116F100646E4D /* user1.png in Resources */,
+				630624D41D8E2E4D00EB0AF3 /* dot.png in Resources */,
 				63FBA4F81D81CA3A00646E4D /* chat.png in Resources */,
 				63FBA4B41D806DF700646E4D /* ViewController.xib in Resources */,
 				63FBA4C71D8116B200646E4D /* notiff.png in Resources */,
@@ -290,6 +302,7 @@
 				63FBA4A91D806D6800646E4D /* Assets.xcassets in Resources */,
 				63FBA4F31D81C34700646E4D /* warning.png in Resources */,
 				63B26ABA1D8BA7900033F305 /* NewMessageViewController.xib in Resources */,
+				630624D21D8E2BCE00EB0AF3 /* MessageCell.xib in Resources */,
 				63FBA4F61D81C6CC00646E4D /* visible.png in Resources */,
 				63FBA4EA1D81BBEE00646E4D /* fence.png in Resources */,
 				63FBA4D31D8121BA00646E4D /* NotificationsViewController.xib in Resources */,
@@ -328,6 +341,7 @@
 				63B26AB91D8BA7900033F305 /* NewMessageViewController.m in Sources */,
 				63FBA4D71D81AD1B00646E4D /* NavigationCell.m in Sources */,
 				63FBA4A11D806D6800646E4D /* AppDelegate.m in Sources */,
+				630624D11D8E2BCE00EB0AF3 /* MessageCell.m in Sources */,
 				63FBA49E1D806D6800646E4D /* main.m in Sources */,
 				63B26AB11D8B70070033F305 /* MessageViewController.m in Sources */,
 			);

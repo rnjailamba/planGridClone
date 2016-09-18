@@ -41,6 +41,11 @@ alpha:1.0]
     [self setUpSearchBar];
     [self setUpTableView];
     [self setUpChatTableView];
+    if(self.showMessageDirectly){
+        self.currentSearch = @"cementify";
+        [self effectsAfterSelectingRow:1];
+    }
+    
 
 }
 
@@ -48,6 +53,7 @@ alpha:1.0]
     self.textField = [[UITextField alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height- 44 - 172 - 44, self.view.frame.size.width, 44)];
     self.textField.placeholder = @"Write message...";
     self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
+    self.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     [self.textField setReturnKeyType:UIReturnKeySend];
     self.textField.delegate = self;
     [self.view addSubview:self.textField];
@@ -96,6 +102,7 @@ alpha:1.0]
 
 -(void)setUpSearchBar{
     [self.searchBar becomeFirstResponder];
+    self.searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
     self.searchBar.delegate = self;
 }
 
@@ -285,17 +292,21 @@ alpha:1.0]
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"did select %ld",(long)indexPath.row);
+    [self effectsAfterSelectingRow:indexPath.row];
+}
+
+-(void)effectsAfterSelectingRow:(NSInteger)row{
     self.tableView.hidden = YES;
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 44)];
     view.backgroundColor = [UIColor lightGrayColor];
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20, 12, self.view.frame.size.width, 20)];
-    if(indexPath.row == 0){
+    if(row == 0){
         label.text = [NSString stringWithFormat:@"To: architect@%@.com",self.currentSearch];;
     }
-    else if(indexPath.row == 1){
+    else if(row == 1){
         label.text = [NSString stringWithFormat:@"To: constructionExpert@%@.com",self.currentSearch];
     }
-    else if(indexPath.row == 2){
+    else if(row == 2){
         label.text = [NSString stringWithFormat:@"To: civilEngineer@%@.com",self.currentSearch];
     }
     [view addSubview:label];

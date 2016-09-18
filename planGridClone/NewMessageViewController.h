@@ -10,4 +10,6 @@
 
 @interface NewMessageViewController : UIViewController
 
+@property (nonatomic) BOOL showMessageDirectly;
+
 @end

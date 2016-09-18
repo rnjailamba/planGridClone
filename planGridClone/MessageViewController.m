@@ -8,8 +8,11 @@
 
 #import "MessageViewController.h"
 #import "NewMessageViewController.h"
+#import "MessageCell.h"
 
-@interface MessageViewController ()
+@interface MessageViewController ()<UITableViewDataSource,UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -19,6 +22,9 @@
     [super viewDidLoad];
     self.view.frame = [[UIScreen mainScreen]bounds];
     [self setUpNavBar];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.tableView registerNib:[UINib nibWithNibName:@"MessageCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -44,14 +50,42 @@
     [self.navigationController presentViewController:navController animated:YES completion:nil];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma UITableViewDelegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;    //count of section
 }
-*/
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return 1;
+}
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *MyIdentifier = @"cell";
+    MessageCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 120.5;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NewMessageViewController *newMessageVC = [[NewMessageViewController alloc]initWithNibName:@"NewMessageViewController" bundle:nil];
+    newMessageVC.showMessageDirectly = YES;
+    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:newMessageVC];
+    [self.navigationController presentViewController:navController animated:YES completion:nil];
+    
+    
+}
+
+
+
 
 @end
