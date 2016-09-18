@@ -13,6 +13,16 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleUpdatedData:)
+                                                 name:@"hideDot"
+                                               object:nil];
+
+}
+
+-(void)handleUpdatedData:(NSNotification *)notification {
+    NSLog(@"recieved");
+    self.dotImage.hidden = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -20,5 +30,7 @@
 
     // Configure the view for the selected state
 }
+
+
 
 @end

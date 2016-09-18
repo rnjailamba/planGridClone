@@ -80,11 +80,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NewMessageViewController *newMessageVC = [[NewMessageViewController alloc]initWithNibName:@"NewMessageViewController" bundle:nil];
     newMessageVC.showMessageDirectly = YES;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"hideDot" object:self];
     [self.navigationController pushViewController:newMessageVC animated:YES];
     
 }
-
-
-
 
 @end

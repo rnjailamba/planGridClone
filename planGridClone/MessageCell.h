@@ -10,4 +10,6 @@
 
 @interface MessageCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *dotImage;
+
 @end

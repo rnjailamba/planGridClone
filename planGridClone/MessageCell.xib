@@ -73,6 +73,9 @@
                 </constraints>
             </tableViewCellContentView>
             <animations/>
+            <connections>
+                <outlet property="dotImage" destination="3CQ-AZ-aKg" id="nzO-7M-Xzq"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>
