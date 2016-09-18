@@ -68,6 +68,7 @@
 {
     static NSString *MyIdentifier = @"cell";
     MessageCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
@@ -79,9 +80,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NewMessageViewController *newMessageVC = [[NewMessageViewController alloc]initWithNibName:@"NewMessageViewController" bundle:nil];
     newMessageVC.showMessageDirectly = YES;
-    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:newMessageVC];
-    [self.navigationController presentViewController:navController animated:YES completion:nil];
-    
+    [self.navigationController pushViewController:newMessageVC animated:YES];
     
 }
 
