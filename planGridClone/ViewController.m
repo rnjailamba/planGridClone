@@ -106,6 +106,8 @@
         [self dismissViewControllerAnimated:YES completion:^{
         }];
     }]];
+    actionSheet.popoverPresentationController.sourceView = self.view;
+    actionSheet.popoverPresentationController.sourceRect = self.view.bounds;
     
     // Present action sheet.
     [self presentViewController:actionSheet animated:YES completion:nil];
